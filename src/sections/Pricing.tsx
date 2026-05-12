@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { Check, Sparkles } from 'lucide-react';
 
 const plans = [
@@ -57,7 +57,7 @@ const plans = [
 ];
 
 export default function Pricing() {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -65,7 +65,7 @@ export default function Pricing() {
     }
   };
 
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: { y: 30, opacity: 0 },
     visible: {
       y: 0,

@@ -1,14 +1,10 @@
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { 
-  Receipt, 
   CheckCircle2, 
   ArrowRight, 
-  Zap, 
   ShieldCheck, 
-  FileText,
   Calculator,
   History,
-  Clock,
   Printer,
   Mail,
   Smartphone,
@@ -17,7 +13,7 @@ import {
 } from 'lucide-react';
 
 export default function GSTBilling() {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -25,7 +21,7 @@ export default function GSTBilling() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,

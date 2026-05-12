@@ -1,6 +1,5 @@
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { 
-  CheckCircle2, 
   ArrowRight, 
   Wallet, 
   Calculator, 
@@ -15,7 +14,7 @@ import {
 } from 'lucide-react';
 
 export default function Accounting() {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -23,7 +22,7 @@ export default function Accounting() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,

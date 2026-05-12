@@ -1,12 +1,7 @@
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { 
-  Box, 
-  CheckCircle2, 
   ArrowRight, 
-  Package, 
-  BarChart, 
-  ClipboardList,
-  Tags,
+  Tags, 
   RefreshCw,
   Bell,
   Warehouse,
@@ -18,7 +13,7 @@ import {
 } from 'lucide-react';
 
 export default function Inventory() {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -26,7 +21,7 @@ export default function Inventory() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,

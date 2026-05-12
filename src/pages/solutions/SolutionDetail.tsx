@@ -1,11 +1,9 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router';
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { 
-  CheckCircle2, 
   ArrowRight, 
   Star, 
-  Store, 
   Truck, 
   Building2, 
   Factory, 
@@ -123,7 +121,7 @@ export default function SolutionDetail() {
 
   if (!data) return <div className="pt-32 text-center font-black text-2xl">Solution not found.</div>;
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -131,7 +129,7 @@ export default function SolutionDetail() {
     }
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,

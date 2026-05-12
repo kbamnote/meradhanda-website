@@ -1,12 +1,9 @@
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { 
-  CheckCircle2, 
   ArrowRight, 
-  Factory, 
   ClipboardList, 
   Clock, 
   ShieldCheck,
-  Zap,
   Layers,
   Settings,
   AlertTriangle,
@@ -15,7 +12,7 @@ import {
 } from 'lucide-react';
 
 export default function ProductionTracking() {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -23,7 +20,7 @@ export default function ProductionTracking() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,

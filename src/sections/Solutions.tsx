@@ -1,17 +1,10 @@
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { 
-  Store, 
   Truck, 
-  Building2, 
   Factory, 
   Settings2,
   UtensilsCrossed,
   Hotel,
-  Stethoscope,
-  GraduationCap,
-  Printer,
-  Car,
-  HeartPulse,
   ArrowRight
 } from 'lucide-react';
 import { Link } from 'react-router';
@@ -62,7 +55,7 @@ const sectors = [
 ];
 
 export default function Solutions() {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,

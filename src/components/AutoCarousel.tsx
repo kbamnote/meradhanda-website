@@ -1,5 +1,5 @@
 import { motion, useAnimationControls } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect } from 'react';
 
 interface AutoCarouselProps {
   items: React.ReactNode[];

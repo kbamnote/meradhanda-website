@@ -12,7 +12,6 @@ import {
   Megaphone,
   ArrowRight,
   Briefcase,
-  Store,
   Truck,
   Building2,
   Settings2,

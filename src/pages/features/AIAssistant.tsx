@@ -1,10 +1,8 @@
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { 
-  CheckCircle2, 
   ArrowRight, 
   Sparkles, 
   Brain, 
-  Cpu, 
   MessageSquare,
   BarChart3,
   Lightbulb,
@@ -17,7 +15,7 @@ import {
 } from 'lucide-react';
 
 export default function AIAssistant() {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -25,7 +23,7 @@ export default function AIAssistant() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,
