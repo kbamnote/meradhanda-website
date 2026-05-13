@@ -1,14 +1,7 @@
 import Hero from '../sections/Hero';
-import ClientTrustBar from '../sections/ClientTrustBar';
 import StatsBar from '../sections/StatsBar';
 import BusinessSolution from '../sections/BusinessSolution';
-import SalesSection from '../sections/SalesSection';
 import ProductionSection from '../sections/ProductionSection';
-import PeopleSection from '../sections/PeopleSection';
-import Features from '../sections/Features';
-import Solutions from '../sections/Solutions';
-import Services from '../sections/Services';
-import Integrations from '../sections/Integrations';
 import HowItWorks from '../sections/HowItWorks';
 import Testimonials from '../sections/Testimonials';
 import Pricing from '../sections/Pricing';
@@ -19,16 +12,9 @@ export default function Home() {
   return (
     <>
       <Hero />
-      {/* <ClientTrustBar /> */}
       <StatsBar />
       <BusinessSolution />
-      {/* <SalesSection /> */}
       <ProductionSection />
-      {/* <PeopleSection /> */}
-      {/* <Features /> */}
-      {/* <Solutions /> */}
-      {/* <Services /> */}
-      {/* <Integrations /> */}
       <HowItWorks />
       <Testimonials />
       <Pricing />
