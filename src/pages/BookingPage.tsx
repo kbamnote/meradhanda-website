@@ -3,6 +3,8 @@ import { ShieldCheck, Calendar, Users, Building2, ArrowRight, Loader2 } from 'lu
 import { useState } from 'react';
 import axios from 'axios';
 
+import { API_BASE_URL } from '../apiConfig';
+
 export default function BookingPage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -28,7 +30,7 @@ export default function BookingPage() {
     setError('');
 
     try {
-      await axios.post('http://localhost:5000/api/bookings', formData);
+      await axios.post(`${API_BASE_URL}/api/bookings`, formData);
       setSubmitted(true);
     } catch (err: any) {
       console.error('Submission error:', err);
