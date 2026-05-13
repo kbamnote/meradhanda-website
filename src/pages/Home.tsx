@@ -1,6 +1,7 @@
 import Hero from '../sections/Hero';
 import ClientTrustBar from '../sections/ClientTrustBar';
 import StatsBar from '../sections/StatsBar';
+import BusinessSolution from '../sections/BusinessSolution';
 import SalesSection from '../sections/SalesSection';
 import ProductionSection from '../sections/ProductionSection';
 import PeopleSection from '../sections/PeopleSection';
@@ -18,15 +19,16 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <ClientTrustBar />
+      {/* <ClientTrustBar /> */}
       <StatsBar />
-      <SalesSection />
+      <BusinessSolution />
+      {/* <SalesSection /> */}
       <ProductionSection />
-      <PeopleSection />
-      <Features />
-      <Solutions />
-      <Services />
-      <Integrations />
+      {/* <PeopleSection /> */}
+      {/* <Features /> */}
+      {/* <Solutions /> */}
+      {/* <Services /> */}
+      {/* <Integrations /> */}
       <HowItWorks />
       <Testimonials />
       <Pricing />

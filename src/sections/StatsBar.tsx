@@ -1,23 +1,31 @@
-import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
-import { useEffect } from 'react';
+import { motion, useMotionValue, useTransform, animate, useInView } from 'framer-motion';
+import { useEffect, useRef } from 'react';
 
 const stats = [
-  { value: 50, suffix: '+', label: 'Modules & Features' },
-  { value: 2400, suffix: '+', label: 'Businesses Onboarded' },
-  { value: 18, suffix: 'Cr+', label: 'Payroll Processed Monthly' },
-  { value: 99.9, suffix: '%', label: 'Uptime Guaranteed' },
+  { value: 15, suffix: '+', label: 'Modules & Features' },
+  { value: 200, suffix: '+', label: 'Businesses Onboarded' },
+  { value: 35, from: 80, suffix: '%', label: 'Reduced Operational Costs' },
+  { value: 15, from: 60, suffix: ' Min', label: 'Avg. Support Response' },
 ];
 
-function Counter({ value, decimals = 0 }: { value: number, decimals?: number }) {
-  const count = useMotionValue(0);
+function Counter({ value, from = 0, decimals = 0 }: { value: number, from?: number, decimals?: number }) {
+  const count = useMotionValue(from);
   const rounded = useTransform(count, (latest) => latest.toFixed(decimals));
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
   
   useEffect(() => {
-    const controls = animate(count, value, { duration: 2, ease: "easeOut" });
-    return controls.stop;
-  }, [count, value]);
+    if (isInView) {
+      const controls = animate(count, value, { 
+        duration: 2.5, 
+        ease: "easeOut",
+        delay: 0.2 
+      });
+      return controls.stop;
+    }
+  }, [count, value, isInView]);
 
-  return <motion.span>{rounded}</motion.span>;
+  return <motion.span ref={ref}>{rounded}</motion.span>;
 }
 
 export default function StatsBar() {
@@ -25,18 +33,25 @@ export default function StatsBar() {
     <section className="w-full bg-white border-y border-gray-100 py-16 relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
           className="grid grid-cols-2 lg:grid-cols-4 gap-12"
         >
           {stats.map((stat, i) => (
             <div key={i} className="text-center relative group">
               <div className="text-4xl lg:text-6xl font-black tracking-tighter text-gray-900 mb-2">
-                <Counter value={stat.value} decimals={stat.value % 1 !== 0 ? 1 : 0} />
+                <Counter 
+                  value={stat.value} 
+                  from={stat.from}
+                  decimals={stat.value % 1 !== 0 ? 1 : 0} 
+                />
                 <span className="text-blue-600">{stat.suffix}</span>
               </div>
-              <p className="text-sm font-bold text-gray-400 uppercase tracking-widest">{stat.label}</p>
+              <p className="text-sm font-bold text-gray-400 uppercase tracking-widest leading-tight">
+                {stat.label}
+              </p>
               
               {/* Subtle divider for desktop */}
               {i < stats.length - 1 && (

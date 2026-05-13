@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import { motion } from 'framer-motion';
 
 export default function FinalCTA() {
@@ -30,13 +31,12 @@ export default function FinalCTA() {
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-6">
-            <motion.button 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-12 py-5 bg-blue-600 text-white text-lg font-black rounded-2xl hover:bg-blue-700 transition-colors shadow-2xl shadow-blue-600/20"
+            <Link
+              to="/book-trial"
+              className="px-12 py-5 bg-blue-600 text-white text-lg font-black rounded-2xl hover:bg-blue-700 transition-colors shadow-2xl shadow-blue-600/20 inline-block text-center"
             >
-              Start Free Trial
-            </motion.button>
+              Book Free Demo
+            </Link>
             <motion.button 
               whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
               whileTap={{ scale: 0.95 }}

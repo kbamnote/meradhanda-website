@@ -1,58 +1,58 @@
 import { motion, type Variants } from 'framer-motion';
+import { Link } from 'react-router';
 import { Check, Sparkles } from 'lucide-react';
 
 const plans = [
   {
-    name: 'STARTER',
+    name: 'MONTHLY',
     price: '₹2,999',
     period: '/month',
-    description: 'For small teams getting started with basic modules.',
+    description: 'Ideal for small businesses just starting their digital journey.',
     features: [
-      'Up to 10 team members',
       'Core HR & Attendance',
-      'Basic Accounting',
+      'Basic Inventory Management',
+      'GST Billing & Invoicing',
       'Task Management',
       'Email Support',
-      '5 GB Storage',
+      '5 GB Secure Storage',
     ],
     featured: false,
-    cta: 'Start Free Trial',
+    cta: 'Book Free Demo',
   },
   {
-    name: 'GROWTH',
-    price: '₹7,999',
-    period: '/month',
-    description: 'For growing businesses that need automation and full suite access.',
+    name: 'HALF YEARLY',
+    price: '₹14,999',
+    period: '/6 months',
+    description: 'Perfect for small to medium businesses planning their growth phases.',
     features: [
-      'Up to 50 team members',
-      'All HR, Payroll & Leave',
-      'Sales CRM & Lead Tracking',
-      'Production Management',
-      'Advanced Accounting & GST',
-      'Priority Support',
-      '50 GB Storage',
-      'API Access',
+      'Everything in Monthly',
+      'Full HR & Payroll Suite',
+      'Advanced Inventory Tracking',
+      'Sales CRM & Pipelines',
+      'Production Floor Control',
+      'Real-time Business Analytics',
+      '50 GB Secure Storage',
     ],
     featured: true,
-    cta: 'Start Free Trial',
+    cta: 'Book Free Demo',
   },
   {
-    name: 'ENTERPRISE',
-    price: 'Custom',
-    period: '',
-    description: 'For teams that need advanced controls, white-label, and dedicated support.',
+    name: 'YEARLY',
+    price: '₹23,999',
+    period: '/year',
+    description: 'Maximum value for established enterprises aiming for long-term excellence.',
     features: [
-      'Unlimited team members',
-      'All modules + Custom fields',
-      'White-label option',
+      'Everything in Half-Yearly',
       'Dedicated Account Manager',
-      'Custom Integrations',
-      'SSO & Advanced Security',
-      'Unlimited Storage',
-      'SLA Guarantee',
+      'Custom ERP Workflows',
+      'Multi-Warehouse Support',
+      'White-label Reports',
+      'Advanced API Access',
+      '24/7 Priority Phone Support',
+      'Unlimited Secure Storage',
     ],
     featured: false,
-    cta: 'Talk to Sales',
+    cta: 'Book Free Demo',
   },
 ];
 
@@ -170,16 +170,16 @@ export default function Pricing() {
               </ul>
 
               {/* CTA */}
-              <motion.button
-                whileTap={{ scale: 0.95 }}
-                className={`w-full py-5 rounded-2xl text-base font-black transition-all ${
+              <Link
+                to="/book-trial"
+                className={`w-full py-5 rounded-2xl text-base font-black transition-all text-center ${
                   plan.featured
                     ? 'bg-white text-blue-600 hover:bg-gray-50'
                     : 'bg-gray-900 text-white hover:bg-black'
                 }`}
               >
-                {plan.cta}
-              </motion.button>
+                Book Free Demo
+              </Link>
             </motion.div>
           ))}
         </motion.div>

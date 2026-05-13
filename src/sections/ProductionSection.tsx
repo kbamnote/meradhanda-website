@@ -82,10 +82,11 @@ export default function ProductionSection() {
                  {/* Production Steps Visualizer */}
                  <div className="space-y-4">
                     {[
-                      { step: "Raw Material", status: "Completed", time: "08:00 AM", color: "bg-green-500" },
-                      { step: "Cutting & Shaping", status: "In Progress", time: "10:30 AM", color: "bg-blue-500", active: true },
-                      { step: "Assembly Line", status: "Pending", time: "02:00 PM", color: "bg-gray-200" },
-                      { step: "Quality Audit", status: "Pending", time: "04:30 PM", color: "bg-gray-200" }
+                      { step: "Job accepted", status: "Completed", time: "08:00 AM", color: "bg-green-500" },
+                      { step: "Designing Completed", status: "Completed", time: "10:00 AM", color: "bg-green-500" },
+                      { step: "Production Completed", status: "In Progress", time: "12:00 PM", color: "bg-blue-500", active: true },
+                      { step: "Quality Check Completed", status: "Pending", time: "02:00 PM", color: "bg-gray-200" },
+                      { step: "Job Dispatched", status: "Pending", time: "04:00 PM", color: "bg-gray-200" }
                     ].map((item, i) => (
                       <motion.div 
                         key={i}

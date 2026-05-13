@@ -280,28 +280,41 @@ export default function Navigation() {
             </div>
           </div>
 
-          {[
-            { label: 'Pricing', id: 'pricing' },
-            { label: 'FAQ', id: 'faq' },
-          ].map((item) => (
-            <button
-              key={item.id}
-              onClick={() => scrollTo(item.id)}
-              className="px-4 py-2 text-sm font-semibold text-[#4B5563] rounded-lg hover:bg-[rgba(233,228,218,0.55)] transition-colors duration-200"
-            >
-              {item.label}
-            </button>
-          ))}
+          <Link
+            to="/pricing"
+            className="px-4 py-2 text-sm font-semibold text-[#4B5563] rounded-lg hover:bg-[rgba(233,228,218,0.55)] transition-colors duration-200"
+          >
+            Pricing
+          </Link>
+
+          <Link
+            to="/faq"
+            className="px-4 py-2 text-sm font-semibold text-[#4B5563] rounded-lg hover:bg-[rgba(233,228,218,0.55)] transition-colors duration-200"
+          >
+            FAQ
+          </Link>
         </div>
 
         {/* Right Actions */}
         <div className="flex items-center gap-3">
-          <button className="hidden sm:block px-4 py-2 text-sm font-semibold text-[#4B5563] border border-[rgba(17,24,39,0.12)] rounded-lg hover:bg-[rgba(233,228,218,0.35)] transition-colors duration-200">
-            Sign In
-          </button>
-          <button className="px-5 py-2.5 text-sm font-semibold text-white bg-[#2563EB] rounded-lg btn-primary shadow-lg shadow-blue-500/20">
-            Get Started
-          </button>
+          <Link 
+            to="/login"
+            className="hidden sm:block px-4 py-2 text-sm font-semibold text-[#4B5563] border border-[rgba(17,24,39,0.12)] rounded-lg hover:bg-[rgba(233,228,218,0.35)] transition-colors duration-200"
+          >
+            Login
+          </Link>
+          <Link 
+            to="/register"
+            className="hidden sm:block px-4 py-2 text-sm font-semibold text-[#2563EB] hover:text-blue-700 transition-colors"
+          >
+            Start Free Trial
+          </Link>
+          <Link 
+            to="/book-trial"
+            className="px-5 py-2.5 text-sm font-semibold text-white bg-[#2563EB] rounded-lg btn-primary shadow-lg shadow-blue-500/20"
+          >
+            Book Free Demo
+          </Link>
         </div>
       </div>
     </nav>

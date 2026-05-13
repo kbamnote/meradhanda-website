@@ -76,7 +76,7 @@ export default function Testimonials() {
         items={testimonials.map((t, i) => (
           <div
             key={i}
-            className="w-[380px] bg-white rounded-3xl border border-[rgba(17,24,39,0.06)] p-8 relative group cursor-default"
+            className="w-[380px] bg-white rounded-3xl border border-[rgba(17,24,39,0.06)] p-8 relative group cursor-default whitespace-normal"
           >
             {/* Quote Icon */}
             <div className="absolute top-6 right-8 text-blue-500/10">

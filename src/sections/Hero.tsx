@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import { motion, type Variants } from 'framer-motion';
 import { ArrowRight, Sparkles, Zap, Shield } from 'lucide-react';
 
@@ -128,10 +129,13 @@ export default function Hero() {
             </motion.p>
 
             <motion.div variants={itemVariants} className="flex flex-wrap gap-4 mb-8">
-              <button className="px-6 py-3.5 bg-[#2563EB] text-white text-sm font-semibold rounded-xl btn-primary flex items-center gap-2 group">
-                Start Free Trial
+              <Link 
+                to="/book-trial"
+                className="px-6 py-3.5 bg-[#2563EB] text-white text-sm font-semibold rounded-xl btn-primary flex items-center gap-2 group"
+              >
+                Book Free Demo
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </button>
+              </Link>
               <button className="px-6 py-3.5 bg-white text-[#111827] text-sm font-semibold rounded-xl border border-[rgba(17,24,39,0.12)] hover:bg-[rgba(233,228,218,0.35)] transition-colors">
                 Explore Features
               </button>
