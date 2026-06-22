@@ -1,5 +1,34 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useT } from '../i18n/LanguageContext';
+import type { Entry } from '../i18n/translations';
+
+const STRINGS: Record<string, Entry> = {
+  'hoverToLearn': {
+    en: 'Hover to learn more',
+    hi: 'और जानने के लिए होवर करें',
+    hinglish: 'Aur jaanne ke liye hover karein',
+    gu: 'વધુ જાણવા માટે હોવર કરો',
+    mr: 'अधिक जाणून घेण्यासाठी होवर करा',
+    mwr: 'ओर जाणन खातर होवर करो',
+  },
+  'deepInsight': {
+    en: 'Deep Insight',
+    hi: 'गहरी जानकारी',
+    hinglish: 'Deep Insight',
+    gu: 'ઊંડી સમજ',
+    mr: 'सखोल माहिती',
+    mwr: 'गहरी जाणकारी',
+  },
+  'learnStrategy': {
+    en: 'Learn Strategy',
+    hi: 'रणनीति सीखें',
+    hinglish: 'Strategy seekhein',
+    gu: 'વ્યૂહરચના શીખો',
+    mr: 'रणनीती शिका',
+    mwr: 'रणनीति सीखो',
+  },
+};
 
 interface CardProps {
   title: string;
@@ -11,6 +40,7 @@ interface CardProps {
 
 export function FlipCardItem({ title, frontDesc, backDesc, icon: Icon, color }: CardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
+  const t = useT(STRINGS);
 
   return (
     <div 
@@ -39,11 +69,11 @@ export function FlipCardItem({ title, frontDesc, backDesc, icon: Icon, color }: 
           <h3 className="text-xl font-bold text-gray-900 mb-3">{title}</h3>
           <p className="text-gray-600 text-sm leading-relaxed">{frontDesc}</p>
           <motion.div 
-            className="mt-6 text-xs font-bold text-blue-600 flex items-center gap-1"
+            className="mt-6 text-xs font-bold text-themeGreen-600 flex items-center gap-1"
             animate={{ x: [0, 5, 0] }}
             transition={{ repeat: Infinity, duration: 1.5 }}
           >
-            Hover to learn more
+            {t('hoverToLearn')}
             <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
@@ -52,15 +82,15 @@ export function FlipCardItem({ title, frontDesc, backDesc, icon: Icon, color }: 
 
         {/* Back */}
         <div 
-          className="absolute inset-0 backface-hidden bg-[#111827] rounded-3xl p-8 text-white flex flex-col items-center text-center justify-center"
+          className="absolute inset-0 backface-hidden bg-[#2B1B12] rounded-3xl p-8 text-white flex flex-col items-center text-center justify-center"
           style={{ transform: 'rotateY(180deg)' }}
         >
-          <h3 className="text-xl font-bold mb-4">Deep Insight</h3>
+          <h3 className="text-xl font-bold mb-4">{t('deepInsight')}</h3>
           <p className="text-gray-300 text-sm leading-relaxed mb-6">
             {backDesc}
           </p>
-          <button className="px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded-full text-xs font-bold transition-colors">
-            Learn Strategy
+          <button className="px-6 py-2 bg-themeGreen-600 hover:bg-themeGreen-700 rounded-full text-xs font-bold transition-colors">
+            {t('learnStrategy')}
           </button>
         </div>
       </motion.div>

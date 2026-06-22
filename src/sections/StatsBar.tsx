@@ -1,11 +1,48 @@
 import { motion, useMotionValue, useTransform, animate, useInView } from 'framer-motion';
 import { useEffect, useRef } from 'react';
+import { useT } from '../i18n/LanguageContext';
+import type { Entry } from '../i18n/translations';
+
+const STRINGS: Record<string, Entry> = {
+  'stat.modules.label': {
+    en: 'Modules & Features',
+    hi: 'मॉड्यूल और फ़ीचर्स',
+    hinglish: 'Modules & Features',
+    gu: 'મોડ્યૂલ અને ફીચર્સ',
+    mr: 'मॉड्यूल आणि वैशिष्ट्ये',
+    mwr: 'मॉड्यूल अर फीचर्स',
+  },
+  'stat.businesses.label': {
+    en: 'Businesses Onboarded',
+    hi: 'जुड़े हुए बिज़नेस',
+    hinglish: 'Businesses Onboarded',
+    gu: 'જોડાયેલા બિઝનેસ',
+    mr: 'जोडलेले बिझनेस',
+    mwr: 'जुड़्या होया बिज़नेस',
+  },
+  'stat.costs.label': {
+    en: 'Reduced Operational Costs',
+    hi: 'घटी हुई ऑपरेशनल लागत',
+    hinglish: 'Reduced Operational Costs',
+    gu: 'ઘટેલો ઓપરેશનલ ખર્ચ',
+    mr: 'कमी झालेला ऑपरेशनल खर्च',
+    mwr: 'घट्योड़ो ऑपरेशनल खरचो',
+  },
+  'stat.support.label': {
+    en: 'Avg. Support Response',
+    hi: 'औसत सपोर्ट रिस्पॉन्स',
+    hinglish: 'Avg. Support Response',
+    gu: 'સરેરાશ સપોર્ટ રિસ્પોન્સ',
+    mr: 'सरासरी सपोर्ट रिस्पॉन्स',
+    mwr: 'औसतन सपोर्ट जवाब',
+  },
+};
 
 const stats = [
-  { value: 15, suffix: '+', label: 'Modules & Features' },
-  { value: 200, suffix: '+', label: 'Businesses Onboarded' },
-  { value: 35, from: 80, suffix: '%', label: 'Reduced Operational Costs' },
-  { value: 15, from: 60, suffix: ' Min', label: 'Avg. Support Response' },
+  { value: 15, suffix: '+', labelKey: 'stat.modules.label' },
+  { value: 200, suffix: '+', labelKey: 'stat.businesses.label' },
+  { value: 35, from: 80, suffix: '%', labelKey: 'stat.costs.label' },
+  { value: 15, from: 60, suffix: ' Min', labelKey: 'stat.support.label' },
 ];
 
 function Counter({ value, from = 0, decimals = 0 }: { value: number, from?: number, decimals?: number }) {
@@ -29,6 +66,7 @@ function Counter({ value, from = 0, decimals = 0 }: { value: number, from?: numb
 }
 
 export default function StatsBar() {
+  const t = useT(STRINGS);
   return (
     <section className="w-full bg-white border-y border-gray-100 py-16 relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
@@ -47,10 +85,10 @@ export default function StatsBar() {
                   from={stat.from}
                   decimals={stat.value % 1 !== 0 ? 1 : 0} 
                 />
-                <span className="text-blue-600">{stat.suffix}</span>
+                <span className="text-themeGreen-600">{stat.suffix}</span>
               </div>
               <p className="text-sm font-bold text-gray-400 uppercase tracking-widest leading-tight">
-                {stat.label}
+                {t(stat.labelKey)}
               </p>
               
               {/* Subtle divider for desktop */}

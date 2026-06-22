@@ -6,40 +6,44 @@
 
 @layer base {
   :root {
-    --background: 45 18% 95%;
-    --foreground: 220 14% 10%;
+    /* Mera Dhanda — Rust & Deep Teal palette */
+    --background: 30 50% 96%;        /* #FBF6F1 */
+    --foreground: 22 41% 12%;        /* #2B1B12 ink */
     --card: 0 0% 100%;
-    --card-foreground: 220 14% 10%;
+    --card-foreground: 22 41% 12%;
     --popover: 0 0% 100%;
-    --popover-foreground: 220 14% 10%;
-    --primary: 221 83% 53%;
+    --popover-foreground: 22 41% 12%;
+    --primary: 20 71% 44%;           /* #C05621 rust */
     --primary-foreground: 0 0% 100%;
-    --secondary: 43 12% 90%;
-    --secondary-foreground: 220 14% 10%;
-    --muted: 43 12% 90%;
-    --muted-foreground: 220 5% 38%;
-    --accent: 221 83% 53%;
+    --secondary: 16 45% 92%;         /* #F4E4DF band */
+    --secondary-foreground: 22 41% 12%;
+    --muted: 16 45% 92%;
+    --muted-foreground: 26 20% 40%;  /* #7A6453 ink-soft */
+    --accent: 175 77% 26%;           /* #0F766E teal */
     --accent-foreground: 0 0% 100%;
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
-    --border: 40 10% 85%;
-    --input: 40 10% 85%;
-    --ring: 221 83% 53%;
+    --border: 30 35% 87%;            /* #ECDFD1 line */
+    --input: 30 35% 87%;
+    --ring: 20 71% 44%;
     --radius: 0.625rem;
 
-    --color-bg: #F6F5F0;
-    --color-bg-alt: #E9E8E3;
-    --color-accent: #2563EB;
-    --color-accent-hover: #1D4ED8;
-    --color-accent-light: rgba(37, 99, 235, 0.08);
-    --color-text: #111827;
-    --color-text-secondary: #4B5563;
-    --color-text-muted: #888880;
-    --color-border: rgba(17, 24, 39, 0.08);
-    --color-border-strong: rgba(17, 24, 39, 0.12);
-    --color-card-surface: rgba(233, 228, 218, 0.55);
-    --color-dark: #111827;
-    --color-dark-deeper: #0B0F19;
+    --color-bg: #FBF6F1;
+    --color-bg-alt: #F4E4DF;
+    --color-accent: #C05621;
+    --color-accent-hover: #A8471A;
+    --color-accent-light: rgba(192, 86, 33, 0.08);
+    --color-teal: #0F766E;
+    --color-teal-deep: #0B575D;
+    --color-teal-tint: #D7EEEA;
+    --color-text: #2B1B12;
+    --color-text-secondary: #7A6453;
+    --color-text-muted: #9A8472;
+    --color-border: rgba(43, 27, 18, 0.08);
+    --color-border-strong: rgba(43, 27, 18, 0.12);
+    --color-card-surface: rgba(244, 228, 223, 0.6);
+    --color-dark: #2B1B12;
+    --color-dark-deeper: #1E120B;
   }
 }
 
@@ -128,7 +132,7 @@
 }
 .btn-primary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+  box-shadow: 0 4px 12px rgba(192, 86, 33, 0.25);
 }
 
 /* Dot pulse animation */

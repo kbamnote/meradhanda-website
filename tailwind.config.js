@@ -6,6 +6,44 @@ module.exports = {
     extend: {
       colors: {
         border: "hsl(var(--border))",
+        // Brand ramp — Rust (kept under the legacy `themeGreen` key so the
+        // 180+ existing usages recolor to the new brand without churn).
+        themeGreen: {
+          50: '#FBE7DA',
+          100: '#F8D5C0',
+          200: '#F0B391',
+          300: '#E89262',
+          400: '#E0763C',
+          500: '#CE6730',
+          600: '#C05621',
+          700: '#A8471A',
+          800: '#8A3A15',
+          900: '#6E2F12',
+          950: '#3C1909',
+        },
+        // Brand Rust (semantic alias of the ramp above)
+        rust: {
+          DEFAULT: '#C05621',
+          press: '#A8471A',
+          light: '#E0763C',
+          tint: '#FBE7DA',
+        },
+        // Brand Deep Teal
+        teal: {
+          DEFAULT: '#0F766E',
+          deep: '#0B575D',
+          tint: '#D7EEEA',
+          50: '#D7EEEA',
+          100: '#B5DED7',
+          200: '#86C7BD',
+          300: '#4FAEA1',
+          400: '#1F8E83',
+          500: '#0F766E',
+          600: '#0D6760',
+          700: '#0B575D',
+          800: '#09464A',
+          900: '#073539',
+        },
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
