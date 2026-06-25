@@ -1,4 +1,13 @@
+import { Link } from 'react-router';
 import { useTranslation } from '../i18n/LanguageContext';
+
+// Internal links that have a real route (others are placeholders for now).
+const ROUTES: Record<string, string> = {
+  Privacy: '/privacy',
+  Pricing: '/pricing',
+  Features: '/#features',
+  'Help Center': '/faq',
+};
 
 const footerColumns = [
   { titleKey: 'footer.col.product', links: ['Features', 'Pricing', 'Security', 'Updates', 'API Docs'] },
@@ -31,16 +40,24 @@ export default function Footer() {
                 {t(col.titleKey)}
               </h4>
               <ul className="space-y-2.5">
-                {col.links.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
-                      className="text-sm text-white/45 hover:text-white/85 transition-colors duration-200"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
+                {col.links.map((link) => {
+                  const className =
+                    'text-sm text-white/45 hover:text-white/85 transition-colors duration-200';
+                  const route = ROUTES[link];
+                  return (
+                    <li key={link}>
+                      {route ? (
+                        <Link to={route} className={className}>
+                          {link}
+                        </Link>
+                      ) : (
+                        <a href="#" className={className}>
+                          {link}
+                        </a>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}

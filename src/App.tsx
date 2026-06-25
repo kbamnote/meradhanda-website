@@ -16,6 +16,8 @@ import FAQPage from './pages/FAQPage';
 import BookingPage from './pages/BookingPage';
 import RegisterPage from './pages/RegisterPage';
 import LoginPage from './pages/LoginPage';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import DeleteAccount from './pages/DeleteAccount';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -30,6 +32,10 @@ function App() {
           <Route path="/book-trial" element={<BookingPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/delete-account" element={<DeleteAccount />} />
+          <Route path="/account-deletion" element={<DeleteAccount />} />
           <Route path="/features/gst-billing" element={<GSTBilling />} />
         <Route path="/features/inventory" element={<Inventory />} />
         <Route path="/features/marketing" element={<Marketing />} />
